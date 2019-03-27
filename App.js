@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from 'react';
 import  { Component} from "react";
 import { StyleSheet, Text, View, Image } from 'react-native';
@@ -126,8 +126,7 @@ const styles = StyleSheet.create({
 });
 
 export default createAppContainer(AppDrawerNavigator)
-=======
-import React, { Component } from 'react';
+
 import { Text, View } from 'react-native';
 import MainPage from './components/main_page';
 
@@ -140,4 +139,3 @@ export default class HelloWorldApp extends Component {
     );
   }
 }
->>>>>>> f34f63d33dfcdbeb6bd5e439e86ea5e0328d0807
