@@ -1,7 +1,12 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "thapar hostel App",
     "slug": "project",
+=======
+    "name": "Hostel and Mess App",
+    "slug": "ccsproject",
+>>>>>>> 80fd5ee592170c8402fc69f5c46c1a9066460040
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
