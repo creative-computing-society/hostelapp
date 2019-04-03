@@ -1,17 +1,32 @@
-
 import React from 'react';
 import  { Component} from "react";
-import { StyleSheet, Text, View, Image } from 'react-native';
+
+import { StyleSheet, Text, View, Image ,SafeAreaView,ScrollView,Dimensions} from 'react-native';
 import Icon from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator,createAppContainer,createStackNavigator,
-  createDrawerNavigator, } from 'react-navigation'
+  createDrawerNavigator,DrawerItems } from 'react-navigation'
+
 import Mess from './screens/Mess'
 import Messentrypage from './screens/Messentrypage'
 import hostelentrypage from './screens/hostelentrypage'
+import Menudisplay from './screens/Menudisplay.js';
+import Menucard from './screens/components/Explore/Menucard'
 
 import Notifications from './screens/Notifications'
 
 
+const CustomDrawerComponent=(props)=>(
+  <SafeAreaView style={{flex:1}}>
+  <View style ={{height:150,backgroundColor:'white',alignItems:'center'}}>
+  <Image source={require('./assets/hostel.png')}  style={{height:120,width:120,borderRadius:60,marginTop:30}}/>
+  
+  </View>
+  <ScrollView>
+    <DrawerItems {...props}/>
+  </ScrollView>
+
+  </SafeAreaView>
+)
 
  rootstack= createBottomTabNavigator({
  Home: {
@@ -27,7 +42,7 @@ import Notifications from './screens/Notifications'
   Notifications: {
     screen: Notifications,
     navigationOptions: {
-      tabBarLabel: 'NOTIFICATIONS',
+      tabBarLabel: 'INBOX',
       tabBarIcon: ({ tintColor }) => (
         <Image source={require('./assets/notification.png')} style={{ height: 24, width: 24, tintColor: tintColor }} />
       )
@@ -76,6 +91,10 @@ const DashboardStackNavigator = createStackNavigator(
     }
     ,hostelentrypage:{
       screen:hostelentrypage
+    },Menudisplay:{
+      screen:Menudisplay
+    },Menucard:{
+      screen:Menucard
     }
   },
   {
@@ -90,7 +109,7 @@ const DashboardStackNavigator = createStackNavigator(
           />
         )
       ,headerStyle:{
-          backgroundColor:"#BA2F16"
+          backgroundColor:"white"
         },headerTitle:"Thapar Hostel App"};
     }
   }
@@ -114,7 +133,9 @@ const DashboardStackNavigator = createStackNavigator(
       screen:Notifications
     }
 
-  });
+
+  },{contentComponent:CustomDrawerComponent});
+
   
 const styles = StyleSheet.create({
   container: {
@@ -126,16 +147,3 @@ const styles = StyleSheet.create({
 });
 
 export default createAppContainer(AppDrawerNavigator)
-
-import { Text, View } from 'react-native';
-import MainPage from './components/main_page';
-
-export default class HelloWorldApp extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <MainPage/>
-      </View>
-    );
-  }
-}

@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
     View,
@@ -22,4 +23,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     }
+
 });

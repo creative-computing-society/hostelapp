@@ -13,7 +13,7 @@ export default class MainPage extends React.Component {
     return (
     <ScrollView>
 
-            <Card containerStyle = {{borderRadius: 10, backgroundColor: '#F39313'}}
+            <Card containerStyle = {{borderRadius: 10, backgroundColor: '#DAE0E2'}}
      
     >
     <ImagesExample />
@@ -26,7 +26,7 @@ export default class MainPage extends React.Component {
 
 
 
-  <Card containerStyle = {{borderRadius: 10,  backgroundColor: '#F39313'}}
+  <Card containerStyle = {{borderRadius: 10,  backgroundColor: '#DAE0E2'}}
     >
      
      <ImagesExample1 />

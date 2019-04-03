@@ -1,16 +1,18 @@
+
 import React, { Component } from "react";
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,WebView
 } from "react-native";
 
 export default class hostelentrypage extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>hostel entry page </Text>
-            </View>
+            <WebView
+            source={{uri: 'https://github.com/facebook/react-native'}}
+            
+          />
         );
     }
 }
@@ -22,4 +24,5 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     }
+
 });

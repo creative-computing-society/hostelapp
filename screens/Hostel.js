@@ -1,4 +1,5 @@
 
+
 import React, { Component} from "react";
 import { createBottomTabNavigator,createAppContainer,StackNavigator } from 'react-navigation'
 import {
@@ -37,4 +38,5 @@ const styles = StyleSheet.create({
             }
         })
     }
+
 });
