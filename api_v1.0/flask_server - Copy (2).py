@@ -200,7 +200,7 @@ def fetch_complaints():
 
     if request.method == 'POST':
         json = request.get_json()
-        complaints = Complaint.query.filter_by(hostel_name = json['hostel']).all()
+        complaints = Complaint.query.filter_by(hostel = json['hostel']).all()
          
 
 @app.route('/v1.0/fetch_menu',methods=['GET','POST'])  # Work with caution, mindfux ahead
@@ -220,23 +220,40 @@ def fetch_mess_menu():
         json = request.get_json()
         menu = Mess_Menu.query.filter_by(hostel_name=json['hostel'], week=int(json['week'])).first()
         if menu:
-            
+            print(menu.sunday.split('::'))
+            dict = {
+                                "header":{"hostel":json['hostel'], "week":json['week']},\
+                                        
+                                "food":{
+                                    
+                                    {'breakfast':{'sunday':menu.sunday.split('::')[1], 'monday':menu.monday.split('::')[1],'tuesday':menu.tuesday.split('::')[1],'wednesday':menu.wednesday.split('::')[1],'thursday':menu.thursday.split('::')[1],'friday':menu.friday.split('::')[1],'saturday':menu.saturday.split('::')[1]}},\
+                                    {'lunch':{'sunday':menu.sunday.split('::')[3], 'monday':menu.monday.split('::')[3],'tuesday':menu.tuesday.split('::')[3],'wednesday':menu.wednesday.split('::')[3],'thursday':menu.thursday.split('::')[3],'friday':menu.friday.split('::')[3],'saturday':menu.saturday.split('::')[3]}},\
+                                    {'dinner':{'sunday':menu.sunday.split('::')[5], 'monday':menu.monday.split('::')[5],'tuesday':menu.tuesday.split('::')[5],'wednesday':menu.wednesday.split('::')[5],'thursday':menu.thursday.split('::')[5],'friday':menu.friday.split('::')[5],'saturday':menu.saturday.split('::')[5]}}
+
+                                    },
+                                "timings":{
+                                    
+                                    {'breakfast':{'sunday':menu.sunday.split('::')[0], 'monday':menu.monday.split('::')[0],'tuesday':menu.tuesday.split('::')[0],'wednesday':menu.wednesday.split('::')[0],'thursday':menu.thursday.split('::')[0],'friday':menu.friday.split('::')[0],'saturday':menu.saturday.split('::')[0]}},\
+                                    {'lunch':{'sunday':menu.sunday.split('::')[2], 'monday':menu.monday.split('::')[2],'tuesday':menu.tuesday.split('::')[2],'wednesday':menu.wednesday.split('::')[2],'thursday':menu.thursday.split('::')[2],'friday':menu.friday.split('::')[2],'saturday':menu.saturday.split('::')[2]}},\
+                                    {'dinner':{'sunday':menu.sunday.split('::')[4], 'monday':menu.monday.split('::')[4],'tuesday':menu.tuesday.split('::')[4],'wednesday':menu.wednesday.split('::')[4],'thursday':menu.thursday.split('::')[4],'friday':menu.friday.split('::')[4],'saturday':menu.saturday.split('::')[4]}}
+                             }
+                            }
             return jsonify(
                             {
                                 "header":{"hostel":json['hostel'], "week":json['week']},\
                                         
                                 "food":{
                                     
-                                    'breakfast':{'sunday':menu.sunday.split('::')[1], 'monday':menu.monday.split('::')[1],'tuesday':menu.tuesday.split('::')[1],'wednesday':menu.wednesday.split('::')[1],'thursday':menu.thursday.split('::')[1],'friday':menu.friday.split('::')[1],'saturday':menu.saturday.split('::')[1]},\
-                                    'lunch':{'sunday':menu.sunday.split('::')[3], 'monday':menu.monday.split('::')[3],'tuesday':menu.tuesday.split('::')[3],'wednesday':menu.wednesday.split('::')[3],'thursday':menu.thursday.split('::')[3],'friday':menu.friday.split('::')[3],'saturday':menu.saturday.split('::')[3]},\
-                                    'dinner':{'sunday':menu.sunday.split('::')[5], 'monday':menu.monday.split('::')[5],'tuesday':menu.tuesday.split('::')[5],'wednesday':menu.wednesday.split('::')[5],'thursday':menu.thursday.split('::')[5],'friday':menu.friday.split('::')[5],'saturday':menu.saturday.split('::')[5]}
+                                    {'breakfast':{'sunday':menu.sunday.split('::')[1], 'monday':menu.monday.split('::')[1],'tuesday':menu.tuesday.split('::')[1],'wednesday':menu.wednesday.split('::')[1],'thursday':menu.thursday.split('::')[1],'friday':menu.friday.split('::')[1],'saturday':menu.saturday.split('::')[1]}},\
+                                    {'lunch':{'sunday':menu.sunday.split('::')[3], 'monday':menu.monday.split('::')[3],'tuesday':menu.tuesday.split('::')[3],'wednesday':menu.wednesday.split('::')[3],'thursday':menu.thursday.split('::')[3],'friday':menu.friday.split('::')[3],'saturday':menu.saturday.split('::')[3]}},\
+                                    {'dinner':{'sunday':menu.sunday.split('::')[5], 'monday':menu.monday.split('::')[5],'tuesday':menu.tuesday.split('::')[5],'wednesday':menu.wednesday.split('::')[5],'thursday':menu.thursday.split('::')[5],'friday':menu.friday.split('::')[5],'saturday':menu.saturday.split('::')[5]}}
 
                                     },
                                 "timings":{
                                     
-                                    'breakfast':{'sunday':menu.sunday.split('::')[0], 'monday':menu.monday.split('::')[0],'tuesday':menu.tuesday.split('::')[0],'wednesday':menu.wednesday.split('::')[0],'thursday':menu.thursday.split('::')[0],'friday':menu.friday.split('::')[0],'saturday':menu.saturday.split('::')[0]},\
-                                    'lunch':{'sunday':menu.sunday.split('::')[2], 'monday':menu.monday.split('::')[2],'tuesday':menu.tuesday.split('::')[2],'wednesday':menu.wednesday.split('::')[2],'thursday':menu.thursday.split('::')[2],'friday':menu.friday.split('::')[2],'saturday':menu.saturday.split('::')[2]},\
-                                    'dinner':{'sunday':menu.sunday.split('::')[4], 'monday':menu.monday.split('::')[4],'tuesday':menu.tuesday.split('::')[4],'wednesday':menu.wednesday.split('::')[4],'thursday':menu.thursday.split('::')[4],'friday':menu.friday.split('::')[4],'saturday':menu.saturday.split('::')[4]}
+                                    {'breakfast':{'sunday':menu.sunday.split('::')[0], 'monday':menu.monday.split('::')[0],'tuesday':menu.tuesday.split('::')[0],'wednesday':menu.wednesday.split('::')[0],'thursday':menu.thursday.split('::')[0],'friday':menu.friday.split('::')[0],'saturday':menu.saturday.split('::')[0]}},\
+                                    {'lunch':{'sunday':menu.sunday.split('::')[2], 'monday':menu.monday.split('::')[2],'tuesday':menu.tuesday.split('::')[2],'wednesday':menu.wednesday.split('::')[2],'thursday':menu.thursday.split('::')[2],'friday':menu.friday.split('::')[2],'saturday':menu.saturday.split('::')[2]}},\
+                                    {'dinner':{'sunday':menu.sunday.split('::')[4], 'monday':menu.monday.split('::')[4],'tuesday':menu.tuesday.split('::')[4],'wednesday':menu.wednesday.split('::')[4],'thursday':menu.thursday.split('::')[4],'friday':menu.friday.split('::')[4],'saturday':menu.saturday.split('::')[4]}}
                              }
                             }
                             )
@@ -249,10 +266,9 @@ def update_menu():
     if request.method == 'POST':
         menu_details = request.get_json()
 
-        menu = Mess_Menu.query.filter_by(hostel_name=menu_details['hostel'],week=int(menu_details['week'])).first()
-        print(menu)
+        menu = Mess_Menu.query.filter_by(hostel_name=menu_details['hostel'],week=int(menu_details['week']))
 
-        if menu is None:
+        if menu:
         
             
             menu = Mess_Menu(hostel_name=menu_details['hostel'], week=int(menu_details['week']), sunday=menu_details['sunday'],monday=menu_details['monday'],tuesday=menu_details['tuesday']\
@@ -276,7 +292,7 @@ def update_menu():
             db.session.commit()
             return jsonify(message='menu updated successfully')
         
-db.drop_all()
+db.drop_all()    
 db.create_all()
 
 Utility.create_hostels('H','ABC','ABC', 'Mankaran Singh::Udhbav Oberoi', 'Mankaran Singh::Udhbav Oberoi::Nikhil')    # name, warden, caretaker, mess_members,student_representatives
