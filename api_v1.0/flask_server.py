@@ -1,12 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from werkzeug import check_password_hash, generate_password_hash
+from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
 import os
 
 app = Flask(__name__)
 
 base_dir=os.path.abspath(os.path.dirname(__file__))
 
+app.config['SECRET_KEY'] = 'CCS'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(base_dir, 'data.sqlite')
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
@@ -104,8 +107,18 @@ class Utility():
         return True
 
     @staticmethod
-    def is_logged_in(roll_number):
-        if roll_number in users:
+    def is_logged_in(token):
+        
+        s = Serializer(app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token)
+        except SignatureExpired:
+            return None    # valid token, but expired
+        except BadSignature:
+            return None    # invalid token
+        user = User.query.get(data['id'])
+        
+        if user and str(user.roll_number) in users:
             return True
         return False
 
@@ -116,6 +129,11 @@ class Utility():
         db.session.add(hostel)
         db.session.commit()
 
+    @staticmethod
+    def generate_auth_token(user, expiration = 4*604800):  
+        s = Serializer(app.config['SECRET_KEY'], expires_in = expiration)
+        return s.dumps({ 'id': user.id })
+   
 @app.route('/v1.0/register',methods=['GET','POST'])
 def register():
 
@@ -141,7 +159,8 @@ def register():
         
 
         try:
-            user = User(username = credentials['name'], email = credentials['email'], password = credentials['password'], phone_number = credentials['phone_number'],roll_number=credentials['roll_number'],hostel=credentials['hostel'])
+            hashed_password = generate_password_hash(credentials['password'])
+            user = User(username = credentials['name'], email = credentials['email'], password = hashed_password, phone_number = credentials['phone_number'],roll_number=credentials['roll_number'],hostel=credentials['hostel'])
             db.session.add(user)
             db.session.commit()
             
@@ -163,11 +182,12 @@ def login():
         user = User.query.filter_by(roll_number = credentials['roll_number']).first()
         if not user:
             return jsonify(status='401',error='Invalid Roll Number')
-        elif user.password != credentials['password']:
+        elif not check_password_hash(user.password,credentials['password']):
             return jsonify(status='401',error='Invalid password')
         else:
+            token = Utility.generate_auth_token(user)
             users.append(credentials['roll_number'])
-            return jsonify(status='200',error='None', message='Login Successful')
+            return jsonify(status='200',error='None', message='Login Successful', token=token.decode('ascii'))
         
         
 @app.route('/v1.0/complaint',methods=['GET','POST'])
@@ -180,6 +200,8 @@ def register_complaint():
 
     if request.method == 'POST':
         complaint = request.get_json()
+        if not Utility.is_logged_in(complaint['token']):
+            return jsonify(error='unauthorized',status='400')
         try:
             complaint = Complaint(category = complaint['category'], description = complaint['description'], hostel = complaint['hostel'])
             db.session.add(complaint)
@@ -192,7 +214,7 @@ def register_complaint():
 @app.route('/v1.0/log_check',methods=['GET','POST'])
 def login_check():
     credentials = request.get_json()
-    return jsonify(status=Utility.is_logged_in(credentials['roll_number']))
+    return jsonify(status=Utility.is_logged_in(credentials['token']))
 
 
 @app.route('/v1.0/fetch_complaints',methods=['GET','POST'])
@@ -275,7 +297,7 @@ def update_menu():
 
             db.session.commit()
             return jsonify(message='menu updated successfully')
-        
+
 db.drop_all()
 db.create_all()
 
@@ -284,19 +306,3 @@ Utility.create_hostels('B','ABC','ABC', 'Mankaran Singh::Udhbav Oberoi', 'Mankar
 
 if __name__ == '__main__':
     app.run(debug=True)
-        
-        
-        
-        
-        
-    
-        
-        
-        
-        
-     
-    
-    
-
-
-   
