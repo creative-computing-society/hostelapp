@@ -10,23 +10,20 @@ import { Card, CardItem, Right } from 'native-base'
 class RecommendedCardItem extends Component {
     render() {
         return (
-            <CardItem>
+           
+            <CardItem >
 
-                <View>
-                    <Image style={{ height: 90, width: 90 }}
-                        source={this.props.imageUri} />
-                </View>
-                <Right style={{ flex: 1, alignItems: 'flex-start', height: 90, paddingHorizontal: 20 }}>
-                    <Text style={{fontSize:20}}>{this.props.itemName}</Text>
-                    {/* <Text style={{ color: 'grey', fontSize: 11 }}>{this.props.itemCreator}</Text> */}
-                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#c4402f' }}>{this.props.itemPrice}</Text>
-                    {/* <Text><Text style={{ color: 'grey', fontWeight: '300', fontSize: 11 }}>
-                        You save
-                    </Text> ${this.props.savings}</Text> */}
-
-                  
-                </Right>
-            </CardItem>
+             <View>
+                 <Image style={{ flex:1, height: 64, width: 64,alignItems:"center" }}
+                     source={this.props.imageUri} />
+             </View>
+             <Right style={{ flex: 3, alignItems: 'flex-start', height: 70, paddingHorizontal: 20 ,alignItems:"center"}}>
+                 <Text style={{fontSize:20, fontWeight: 'bold'}}>{this.props.itemName1}</Text>
+                 
+                 <Text style={{ fontSize: 16, color: 'black' }}>{this.props.itemPrice1}</Text>
+                 
+             </Right>
+             </CardItem>
         );
     }
 }

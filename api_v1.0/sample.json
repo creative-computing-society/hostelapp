@@ -1,0 +1,424 @@
+{
+    "hostel": {
+        "h": {
+            "name": "h",
+            "messMenu": {
+                "week": 1,
+                "monday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal"
+                        },
+                        "dinner": {
+                            "dishes": "rajma"
+                        }
+                    }
+                },
+                "tuesday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "wednesday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "thursday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "friday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "saturday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "sunday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                }
+            }
+        },
+        "m": {
+            "name": "m",
+            "messMenu": {
+                "week": 1,
+                "monday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal"
+                        },
+                        "dinner": {
+                            "dishes": "rajma"
+                        }
+                    }
+                },
+                "tuesday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "wednesday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "thursday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "friday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "saturday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                },
+                "sunday": {
+                    "week1menu": {
+                        "breakfast": {
+                            "dishes": "aalo, rajma, chawal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "cholle, kulche",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "dal chawal",
+                            "timing": "8.30-9.00 am"
+                        }
+                    },
+                    "week2menu": {
+                        "breakfast": {
+                            "dishes": "parantha",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "lunch": {
+                            "dishes": "aalo, dal",
+                            "timing": "8.30-9.00 am"
+                        },
+                        "dinner": {
+                            "dishes": "rajma",
+                            "timing": "8.30-9.00 am"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
